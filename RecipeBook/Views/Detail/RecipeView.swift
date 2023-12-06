@@ -8,15 +8,15 @@
 import SwiftUI
 
 struct RecipeView: View {
-    var recipe : Recipe
+    
+    @State var recipe : Recipe
+    
     var body: some View {
         ScrollView {
             AsyncImage(url: URL(string: recipe.image)) { image in
                 image
                     .resizable()
                     .scaledToFill()
-                    
-                
             }
             placeholder: {
                 Image(systemName: "photo")
@@ -31,10 +31,25 @@ struct RecipeView: View {
             .background(LinearGradient(gradient: Gradient(colors: [Color.gray.opacity(0.3), Color.gray]), startPoint: .top, endPoint: .bottom))
             
             VStack(spacing: 30){
-                Text(recipe.name)
-                    .font(.largeTitle)
-                    .bold()
-                    .multilineTextAlignment(.center)
+                HStack{
+                    Spacer()
+                    Text(recipe.name)
+                        .font(.largeTitle)
+                        .bold()
+                        .multilineTextAlignment(.center)
+                    Spacer()
+                    Button(action: {
+                        if recipe.favorite {
+                            recipe.favorite = false
+                        }
+                    }, label: {
+                        Image(systemName: recipe.favorite ? "heart.fill" : "heart")
+                            .resizable()
+                            .frame(width: 20,height: 20)
+                            .padding(.trailing,8)
+                            .foregroundColor(.red)
+                    })
+                }
                 
                 VStack(alignment: .leading, spacing: 30) {
                     if !recipe.desc.isEmpty {

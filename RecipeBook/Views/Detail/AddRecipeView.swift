@@ -118,7 +118,7 @@ extension AddRecipeView {
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "yyyy-mm-dd"
         let datePublished = dateFormatter.string(from: now)
-        let recipe = Recipe(name: name, image: "", desc: description, ingredients: ingredients, directions: directions, category: selectedCategory.rawValue, datePublished: datePublished, url: "")
+        let recipe = Recipe(name: name, image: "", desc: description, ingredients: ingredients, directions: directions, category: selectedCategory.rawValue, datePublished: datePublished, url: "", favorite: false)
         
         recipesVM.addRecipe(recipe: recipe)
     }

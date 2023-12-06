@@ -6,6 +6,12 @@
 //
 
 import Foundation
+import Firebase
+import FirebaseCore
+import FirebaseFirestoreSwift
+import FirebaseFirestore
+
+
 
 enum Category : String, CaseIterable, Identifiable {
     var id : String { self.rawValue}
@@ -21,8 +27,8 @@ enum Category : String, CaseIterable, Identifiable {
     
 }
 
-struct Recipe : Identifiable {
-    let id = UUID()
+struct Recipe : Identifiable, Decodable, Encodable {
+    var id = UUID()
     let name : String
     let image : String
     let desc : String
@@ -31,6 +37,7 @@ struct Recipe : Identifiable {
     let category : Category.RawValue
     let datePublished : String
     let url : String
+    var favorite : Bool
 }
 
 
@@ -44,6 +51,11 @@ extension Recipe {
         directions: "Prepare a flavorful egg and vegetable mixture by whisking together 4 to 5 large eggs, kosher salt, paprika, and red pepper flakes. Incorporate chopped bell pepper, cherry tomatoes, green onions, crumbled feta cheese, parsley, and a drizzle of olive oil. Lightly brush a sheet pan with olive oil and place 4 slices of bread on it. Spread the egg mixture evenly over the bread, ensuring a generous distribution of vegetables and feta cheese. Bake in a preheated 375°F oven for about 15 minutes until the eggs are cooked, and the vegetables have softened. This delightful dish combines the richness of eggs with a medley of vibrant vegetables, creating a delicious and satisfying meal.",
         category: Category.breakfast.rawValue,
         datePublished: "Dec 5, 2023",
-        url: "https://www.themediterraneandish.com/egg-toast/")
+        url: "https://www.themediterraneandish.com/egg-toast/",
+        favorite: true
+       )
     ]
+    
 }
+
+
