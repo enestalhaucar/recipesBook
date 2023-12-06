@@ -8,11 +8,24 @@
 import SwiftUI
 
 struct CategoryView: View {
+    @EnvironmentObject var recipesVM : RecipesViewModel
+    
+    var category : Category
+    
+    // Computed Property
+    var recipe : [Recipe] {
+        return recipesVM.recipes.filter{ $0.category == category.rawValue }
+    }
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        ScrollView {
+            RecipeList(recipes: recipe)
+        }
+        .navigationTitle(category.rawValue)
     }
 }
 
 #Preview {
-    CategoryView()
+    CategoryView(category: Category.breakfast)
+        .environmentObject(RecipesViewModel())
 }
