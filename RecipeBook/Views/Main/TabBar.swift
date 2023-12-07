@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct TabBar: View {
+    @Binding var showWelcomeView : Bool
     var body: some View {
         TabView{
             HomeView()
@@ -28,7 +29,7 @@ struct TabBar: View {
                     Label("Favorites", systemImage: "heart")
                 }
             
-            SettingsView()
+            SettingsView(showWelcomeView: $showWelcomeView)
                 .tabItem {
                     Label("Settings", systemImage: "gear")
                 }
@@ -38,6 +39,6 @@ struct TabBar: View {
 }
 
 #Preview {
-    TabBar()
+    TabBar(showWelcomeView: .constant(false))
         .environmentObject(RecipesViewModel())
 }

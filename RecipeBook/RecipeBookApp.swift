@@ -6,26 +6,21 @@
 //
 
 import SwiftUI
-import FirebaseCore
+import Firebase
 
 @main
 struct RecipeBookApp: App {
-    class AppDelegate: NSObject, UIApplicationDelegate {
-      func application(_ application: UIApplication,
-                       didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey : Any]? = nil) -> Bool {
-        FirebaseApp.configure()
-
-        return true
-      }
-    }
     
+    init() {
+        FirebaseApp.configure()
+    }
     @StateObject var recipesViewModel = RecipesViewModel()
     
     var body: some Scene {
-        @UIApplicationDelegateAdaptor(AppDelegate.self) var delegate
+        
         WindowGroup {
-            ContentView()
-                .environmentObject(recipesViewModel)
+            // ContentView().environmentObject(recipesViewModel)
+            RootView()
         }
     }
 }

@@ -8,12 +8,13 @@
 import SwiftUI
 
 struct ContentView: View {
+    @Binding var showWelcomeView : Bool
     var body: some View {
-        TabBar()
+        TabBar(showWelcomeView: $showWelcomeView)
     }
 }
 
 #Preview {
-    ContentView()
+    ContentView(showWelcomeView: .constant(false))
         .environmentObject(RecipesViewModel())
 }

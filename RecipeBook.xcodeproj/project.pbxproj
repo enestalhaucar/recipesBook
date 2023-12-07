@@ -58,6 +58,13 @@
 		ECBFCA0F2B2067D700EB5758 /* CategoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECBFCA0E2B2067D700EB5758 /* CategoryView.swift */; };
 		ECBFCA112B20690400EB5758 /* AddRecipeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECBFCA102B20690400EB5758 /* AddRecipeView.swift */; };
 		ECBFCA132B2072E100EB5758 /* RecipesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECBFCA122B2072E100EB5758 /* RecipesViewModel.swift */; };
+		ECDAA0352B21A98000EB3FA9 /* WelcomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECDAA0342B21A98000EB3FA9 /* WelcomeView.swift */; };
+		ECDAA0392B21B29A00EB3FA9 /* SignInView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECDAA0382B21B29A00EB3FA9 /* SignInView.swift */; };
+		ECDAA03B2B21B47A00EB3FA9 /* SignUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECDAA03A2B21B47A00EB3FA9 /* SignUpView.swift */; };
+		ECDAA03D2B21B4C200EB3FA9 /* AuthenticationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECDAA03C2B21B4C200EB3FA9 /* AuthenticationManager.swift */; };
+		ECDAA03F2B21B72400EB3FA9 /* SignInViewModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECDAA03E2B21B72400EB3FA9 /* SignInViewModels.swift */; };
+		ECDAA0452B21E78C00EB3FA9 /* RootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECDAA0442B21E78C00EB3FA9 /* RootView.swift */; };
+		ECDAA0472B21EA8B00EB3FA9 /* SettingsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECDAA0462B21EA8B00EB3FA9 /* SettingsViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -81,6 +88,13 @@
 		ECBFCA0E2B2067D700EB5758 /* CategoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryView.swift; sourceTree = "<group>"; };
 		ECBFCA102B20690400EB5758 /* AddRecipeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddRecipeView.swift; sourceTree = "<group>"; };
 		ECBFCA122B2072E100EB5758 /* RecipesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipesViewModel.swift; sourceTree = "<group>"; };
+		ECDAA0342B21A98000EB3FA9 /* WelcomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeView.swift; sourceTree = "<group>"; };
+		ECDAA0382B21B29A00EB3FA9 /* SignInView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInView.swift; sourceTree = "<group>"; };
+		ECDAA03A2B21B47A00EB3FA9 /* SignUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpView.swift; sourceTree = "<group>"; };
+		ECDAA03C2B21B4C200EB3FA9 /* AuthenticationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationManager.swift; sourceTree = "<group>"; };
+		ECDAA03E2B21B72400EB3FA9 /* SignInViewModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewModels.swift; sourceTree = "<group>"; };
+		ECDAA0442B21E78C00EB3FA9 /* RootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootView.swift; sourceTree = "<group>"; };
+		ECDAA0462B21EA8B00EB3FA9 /* SettingsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -167,6 +181,7 @@
 		ECBFC9F32B1F5F9200EB5758 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				ECDAA0332B21A96C00EB3FA9 /* Auth */,
 				ECBFC9F42B1F5FA100EB5758 /* Main */,
 				ECBFC9F72B1F5FBF00EB5758 /* Components */,
 				ECBFC9F52B1F5FA800EB5758 /* Detail */,
@@ -211,6 +226,8 @@
 			isa = PBXGroup;
 			children = (
 				ECBFCA122B2072E100EB5758 /* RecipesViewModel.swift */,
+				ECDAA03E2B21B72400EB3FA9 /* SignInViewModels.swift */,
+				ECDAA0462B21EA8B00EB3FA9 /* SettingsViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -220,8 +237,20 @@
 			children = (
 				ECBFCA062B1FA8C900EB5758 /* RecipeModel.swift */,
 				EC8C927F2B20ABAA00418142 /* FavoritesList.swift */,
+				ECDAA03C2B21B4C200EB3FA9 /* AuthenticationManager.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		ECDAA0332B21A96C00EB3FA9 /* Auth */ = {
+			isa = PBXGroup;
+			children = (
+				ECDAA0342B21A98000EB3FA9 /* WelcomeView.swift */,
+				ECDAA0382B21B29A00EB3FA9 /* SignInView.swift */,
+				ECDAA03A2B21B47A00EB3FA9 /* SignUpView.swift */,
+				ECDAA0442B21E78C00EB3FA9 /* RootView.swift */,
+			);
+			path = Auth;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -332,16 +361,23 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				ECDAA0392B21B29A00EB3FA9 /* SignInView.swift in Sources */,
+				ECDAA0472B21EA8B00EB3FA9 /* SettingsViewModel.swift in Sources */,
 				ECBFCA112B20690400EB5758 /* AddRecipeView.swift in Sources */,
 				ECBFCA032B1FA30900EB5758 /* SettingsView.swift in Sources */,
 				ECBFCA092B1FAFCC00EB5758 /* RecipeCard.swift in Sources */,
+				ECDAA03F2B21B72400EB3FA9 /* SignInViewModels.swift in Sources */,
 				ECBFCA012B1FA2FC00EB5758 /* FavoritiesView.swift in Sources */,
+				ECDAA03B2B21B47A00EB3FA9 /* SignUpView.swift in Sources */,
 				ECBFC9FD2B1FA2D100EB5758 /* CategoriesView.swift in Sources */,
+				ECDAA0352B21A98000EB3FA9 /* WelcomeView.swift in Sources */,
 				ECBFCA052B1FA46600EB5758 /* TabBar.swift in Sources */,
+				ECDAA0452B21E78C00EB3FA9 /* RootView.swift in Sources */,
 				ECBFCA0F2B2067D700EB5758 /* CategoryView.swift in Sources */,
 				ECBFC9FF2B1FA2E200EB5758 /* NewRecipeView.swift in Sources */,
 				ECBFCA0D2B1FC2ED00EB5758 /* RecipeView.swift in Sources */,
 				ECBFCA0B2B1FC10A00EB5758 /* RecipeList.swift in Sources */,
+				ECDAA03D2B21B4C200EB3FA9 /* AuthenticationManager.swift in Sources */,
 				ECBFC9FB2B1FA2C400EB5758 /* HomeView.swift in Sources */,
 				ECBFC9E72B1F5F3800EB5758 /* ContentView.swift in Sources */,
 				ECBFCA132B2072E100EB5758 /* RecipesViewModel.swift in Sources */,

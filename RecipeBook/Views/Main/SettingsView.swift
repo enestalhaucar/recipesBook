@@ -8,15 +8,30 @@
 import SwiftUI
 
 struct SettingsView: View {
+    @StateObject private var viewModel = SettingsViewModel()
+    @Binding var showWelcomeView : Bool
     var body: some View {
         NavigationView {
-            Text("Settings")
-                .navigationTitle("Settings")
+            List {
+                Button("Log Out") {
+                    Task {
+                        do {
+                            try viewModel.signOut()
+                            showWelcomeView = true
+                        } catch {
+                            print(error)
+                        }
+                    }
+                }
+            }
         }
         .navigationViewStyle(.stack)
+        .navigationTitle("Settings")
     }
 }
 
 #Preview {
-    SettingsView()
+    NavigationStack{
+        SettingsView(showWelcomeView: .constant(false))
+    }
 }

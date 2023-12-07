@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct RecipeView: View {
-    
+
     @State var recipe : Recipe
     
     var body: some View {
