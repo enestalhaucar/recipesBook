@@ -21,7 +21,7 @@ struct RootView: View {
             }
             .fullScreenCover(isPresented: $showWelcomeView ) {
                 NavigationStack {
-                    WelcomeView()
+                    WelcomeView(showWelcomeView: .constant(false))
                 }
             }
             

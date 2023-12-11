@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct WelcomeView: View {
+    @Binding var showWelcomeView : Bool
     var body: some View {
         NavigationView {
             VStack {
@@ -42,7 +43,7 @@ struct WelcomeView: View {
                 Spacer()
                 
                 NavigationLink{
-                    SignInView()
+                    SignInView(showWelcomeView: .constant(false))
                 } label: {
                     Text("Sign In")
                         .font(
@@ -57,7 +58,7 @@ struct WelcomeView: View {
                         .padding(.horizontal,25)
                 }.padding(.bottom,10)
                 
-                NavigationLink(destination: SignInView()) {
+                NavigationLink(destination: SignUpView(showWelcomeView: .constant(false))) {
                     Text("Sign Up")
                         .font(
                             Font.custom("Roboto", size: 15)
@@ -92,6 +93,6 @@ struct WelcomeView: View {
 
 #Preview {
     NavigationStack{
-        WelcomeView()
+        WelcomeView(showWelcomeView: .constant(false))
     }
 }

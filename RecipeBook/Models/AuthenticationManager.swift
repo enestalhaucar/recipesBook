@@ -34,6 +34,11 @@ final class AuthenticationManager {
         return AuthDataResultModel(user: AuthDataResult.user)
     }
     
+    func signIn(email: String, password: String) async throws -> AuthDataResultModel {
+        let AuthDataResult = try await Auth.auth().signIn(withEmail: email, password: password)
+        return AuthDataResultModel(user: AuthDataResult.user)
+    }
+    
     func signOut() throws {
         try Auth.auth().signOut()
     }

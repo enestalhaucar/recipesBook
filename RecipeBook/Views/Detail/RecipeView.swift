@@ -51,9 +51,13 @@ struct RecipeView: View {
                     })
                 }
                 
-                VStack(alignment: .leading, spacing: 30) {
+                VStack(alignment: .center, spacing: 30) {
                     if !recipe.desc.isEmpty {
                         Text(recipe.desc)
+                            .padding()
+                            .background(Color(red: 0.97, green: 0.87, blue: 0.57))
+                            .cornerRadius(20)
+                            
                     }
                     
                     if !recipe.ingredients.isEmpty {
@@ -61,7 +65,13 @@ struct RecipeView: View {
                             Text("Ingredients")
                                 .font(.headline)
                             Text(recipe.ingredients)
-                        }
+                                
+                        }.padding()
+                            .background(Color(red: 0.97, green: 0.87, blue: 0.57))
+                            .cornerRadius(20)
+                            
+                        
+
                     }
                     
                     
@@ -70,12 +80,16 @@ struct RecipeView: View {
                             Text("Directions")
                                 .font(.headline)
                             Text(recipe.directions)
-                        }
+                        }.padding()
+                            .background(Color(red: 0.97, green: 0.87, blue: 0.57))
+                            .cornerRadius(20)
+
                     }
-                }.frame(maxWidth: .infinity, alignment: .leading)
+                }.frame(width: UIScreen.screenWidth * 8 / 10 , alignment: .leading)
             }.padding(.horizontal, 40)
         }
         .ignoresSafeArea(.container, edges: .top)
+        .background(Color(red: 1, green: 0.98, blue: 0.93))
     }
 }
 

@@ -14,9 +14,13 @@ struct HomeView: View {
             ScrollView{
                 RecipeList(recipes: recipesVM.recipes)
             }
+            .background(Color(red: 1, green: 0.98, blue: 0.93))
             .navigationTitle("My Recipes")
+            .navigationBarTitleDisplayMode(.inline)
+            .toolbarBackground(Color.blue, for: .navigationBar)
         }
         .navigationViewStyle(.stack)
+       
     }
 }
 

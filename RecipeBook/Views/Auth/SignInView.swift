@@ -9,6 +9,7 @@ import SwiftUI
 
 struct SignInView: View {
     @StateObject private var viewModel = SignInViewModels()
+    @Binding var showWelcomeView : Bool
     
     var body: some View {
         VStack {
@@ -43,20 +44,13 @@ struct SignInView: View {
                     RoundedRectangle(cornerRadius: 10)
                         .stroke(Color(red: 0.95, green: 0.42, blue: 0.13), lineWidth: 2)
                 ).padding(.bottom,10)
-           /* SecureField("Repassword", text: $viewModel.repassword)
-                .frame(width: UIScreen.screenWidth * 7.1 / 10, height: 20)
-                .padding()
-                .background(.white)
-                .overlay(
-                    RoundedRectangle(cornerRadius: 10)
-                        .stroke(Color(red: 0.95, green: 0.42, blue: 0.13), lineWidth: 2)
-                ).padding(.bottom,10)
-            */
+           
             Spacer()
             Button(action: {
                 Task {
                         do {
                             try await viewModel.singIn()
+                            showWelcomeView = false
                         } catch {
                             print("Error signing in: \(error.localizedDescription)")
                         }
@@ -93,6 +87,6 @@ extension UIScreen{
 
 #Preview {
     NavigationStack{
-        SignInView()    
+        SignInView(showWelcomeView: .constant(false))    
     }
 }
